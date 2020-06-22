@@ -1,90 +1,45 @@
-ï»¿
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8">
-<title>æ·˜å®ä¹°å®¶ç§€ç¦åˆ©å›¾ç‰‡ - æˆ‘çˆ±åˆ†äº«ç½‘soujer.com</title>
-<link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-		
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-<script type="text/javascript">
-			$(function(){
-				$.get('https://api.66mz8.com/api/rand.tbimg.php?format=json',function(data){
-					
-					document.getElementById('FL').src=data.pic_url;
-				});
-							
-			});
-function ceshi(){
-	$.get('https://api.66mz8.com/api/rand.tbimg.php?format=json',function(data){
-					
-					document.getElementById('FL').src=data.pic_url;
-				});
-}
-		</script>
+<!-- Ğ¡¸ß½ÌÑ§Íøwww.xgjxw6.com -->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>ÏóÆåÓÎÏ· - Ğ¡¸ß½ÌÑ§Íøwww.12580sky.com</title>
+<link href="css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-  <div class="gundongtiao"></div>
-  <div class="bg">
-    <div class="box">
-      <!-- header -->
-      <div class="header">
-        <div class="logo">
-          <img src="img/login.jpg" alt="">
-        </div>
-        <p>æ·˜å®ä¹°å®¶ç§€ç¦åˆ©å›¾ç‰‡</p>
-       
-      </div>
-      <!-- content -->
-      <div class="content">
-        <div class="con_hb">
-          <!-- çº¢åŒ…äºŒç»´ç å›¾ç‰‡ -->
-          <img class="hb" src="" alt="ä¹°å®¶ç¦åˆ©ç§€" id="FL">
-    
-        </div>
-        
-      </div>
-       <div>
-        	<img src="img/button.jpg" style="width: 100%;" id="but" onclick="ceshi()"/>
-        </div>
-      <!-- ç‰ˆæƒ -->
-      <div class="banquan">
-        <p><a href="https://www.fxw.la/">æˆ‘çˆ±åˆ†äº«ç½‘</p>
-      </div>
-    </div>
-  </div>
-
-
-<div id="BgColor"></div>
-
-<!-- å°å§å§è¯­éŸ³ -->
-
-
+<div class="box" id="box">
+	<div class="chess_left">
+		<canvas id="chess">¶Ô²»Æğ£¬ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖHTML5£¬ÇëÉı¼¶ä¯ÀÀÆ÷ÖÁIE9¡¢firefox»òÕß¹È¸èä¯ÀÀÆ÷£¡</canvas>
+		<audio src="audio/click.wav" id="clickAudio" preload="auto"></audio>
+		<!--<audio src="audio/check.wav" id="checkAudio" preload="auto"></audio>-->
+		<audio src="audio/select.wav" id="selectAudio" preload="auto"></audio>
+		<div>
+			<div class="bn_box" id="bnBox">
+				<input type="button" name="offensivePlay" id="tyroPlay" value="ĞÂÊÖË®Æ½" />
+				<input type="button" name="offensivePlay" id="superPlay" value="ÖĞ¼¶Ë®Æ½" />
+                <input type="button" name="button" id="" value="´óÊ¦Ë®Æ½" disabled />
+				<!--
+			<input type="button" name="offensivePlay" id="offensivePlay" value="ÏÈÊÖ¿ªÊ¼" />
+			<input type="button" name="defensivePlay" id="defensivePlay" value="ºóÊÖ¿ªÊ¼" />
+			-->
+				<input type="button" name="regret" id="regretBn" value="»ÚÆå" />
+				<input type="button" name="billBn" id="billBn" value="ÆåÆ×" class="bn_box" />
+				<input type="button" name="stypeBn" id="stypeBn" value="»»·ô" />
+			</div>
+		</div>
+	</div>
+	<div class="chess_right" id="chessRight">
+		<select name="billList" id="billList">
+		</select>
+		<ol id="billBox" class="bill_box">
+		</ol>
+	</div>
+	<div id="moveInfo" class="move_info"> </div>
+</div>
+<script src="js/common.js"></script> 
+<script src="js/play.js"></script> 
+<script src="js/AI.js"></script> 
+<script src="js/bill.js"></script> 
+<script src="js/gambit.js"></script>
 </body>
 </html>
-<script>
-    var tip_box_p_h = document.querySelectorAll('.tip_box p')[0].offsetHeight;
-    var i = 0;
-    var kfbtn = document.getElementById('kfbtn');
-    var BgColor = document.getElementById('BgColor');
-    var kfewm = document.getElementById('kfewm');
-    kfbtn.onclick = function(){
-      BgColor.style.display = "block";
-      kfewm.style.display = "block";
-    }
-    BgColor.onclick = function(){
-      BgColor.style.display = "none";
-      kfewm.style.display = "none";
-    }
-    setInterval(()=>{
-        let startScroll = setInterval(()=>{
-        i++;
-        document.querySelector('.tip_box').style.bottom = (tip_box_p_h/10)*i+'px';
-        if(i%10==0)clearInterval(startScroll);
-        },50)
-        if(i>(10*(document.querySelectorAll('.tip_box p').length-2)))i = 0;
-    },1000)
-</script>
